@@ -5,6 +5,7 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
+  base: '/treehouse-horror/',
   plugins: [
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
