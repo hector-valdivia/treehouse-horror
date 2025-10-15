@@ -78,15 +78,15 @@ function App() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white">
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white">
             <header className="bg-black/50 backdrop-blur-sm border-b border-purple-500/30 py-6">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-center gap-3">
-                        <Ghost className="w-10 h-10 text-purple-400 animate-pulse" />
+                        <Ghost className="w-10 h-10 text-purple-400 animate-pulse"/>
                         <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                             The Simpsons Treehouse of Horror
                         </h1>
-                        <Skull className="w-10 h-10 text-purple-400 animate-pulse" />
+                        <Skull className="w-10 h-10 text-purple-400 animate-pulse"/>
                     </div>
                     <p className="text-center text-purple-300 mt-2">
                         Just for Evans
@@ -95,7 +95,7 @@ function App() {
             </header>
 
             {/* Main Content */}
-            <main className="container mx-auto px-4 py-12">
+            <main className="container mx-auto px-4 py-12 flex-grow">
                 <div className="max-w-2xl mx-auto">
                     {/* Random Button */}
                     <div className="text-center mb-12">
@@ -104,25 +104,26 @@ function App() {
                             disabled={isAnimating}
                             className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-bold text-xl shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          <span className="flex items-center gap-3">
-                            <Zap className={`w-6 h-6 ${isAnimating ? 'animate-spin' : ''}`} />
-                              {isAnimating ? 'Buscando...' : 'Episodio Random'}
-                              <Zap className={`w-6 h-6 ${isAnimating ? 'animate-spin' : ''}`} />
-                          </span>
+                      <span className="flex items-center gap-3">
+                        <Zap className={`w-6 h-6 ${isAnimating ? 'animate-spin' : ''}`}/>
+                          {isAnimating ? 'Buscando...' : 'Episodio Random'}
+                          <Zap className={`w-6 h-6 ${isAnimating ? 'animate-spin' : ''}`}/>
+                      </span>
                         </button>
                     </div>
 
                     {/* Episode Card */}
                     {selectedEpisode && (
-                        <div className={`bg-gradient-to-br from-purple-800/40 to-pink-800/40 backdrop-blur-md rounded-2xl p-8 border-2 border-purple-500/50 shadow-2xl transform transition-all duration-500 ${
-                            isAnimating ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-                        }`}>
+                        <div
+                            className={`bg-gradient-to-br from-purple-800/40 to-pink-800/40 backdrop-blur-md rounded-2xl p-8 border-2 border-purple-500/50 shadow-2xl transform transition-all duration-500 ${
+                                isAnimating ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
+                            }`}>
                             {/* Episode Number Badge */}
                             <div className="flex justify-center mb-6">
                                 <div className="bg-black/60 rounded-full px-6 py-2 border-2 border-purple-400">
-                                  <span className="text-3xl font-bold text-purple-300">
-                                    {selectedEpisode.romanNumeral}
-                                  </span>
+                              <span className="text-3xl font-bold text-purple-300">
+                                {selectedEpisode.romanNumeral}
+                              </span>
                                 </div>
                             </div>
 
@@ -157,11 +158,12 @@ function App() {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                                     >
-                                        <ExternalLink className="w-5 h-5" />
+                                        <ExternalLink className="w-5 h-5"/>
                                         Ver en Disney+
                                     </a>
                                     <p className="text-sm text-purple-300 mt-3 opacity-70">
-                                        Busca: Temporada {selectedEpisode.season}, Episodio {selectedEpisode.episode}
+                                        Busca: Temporada {selectedEpisode.season},
+                                        Episodio {selectedEpisode.episode}
                                     </p>
                                 </div>
                             </div>
@@ -199,7 +201,7 @@ function App() {
             </main>
 
             {/* Footer */}
-            <footer className="mt-12 py-6 text-center text-purple-400 text-sm border-t border-purple-500/30">
+            <footer className="py-6 text-center text-purple-400 text-sm border-t border-purple-500/30">
                 <p>🎃 Treehouse of Horror • Los Simpsons • Disney+ 👻</p>
             </footer>
         </div>
